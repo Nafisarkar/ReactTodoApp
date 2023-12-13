@@ -1,11 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
+require("dotenv").config();
 const app = express();
 const port = 4000;
 
-const ATLAS_URI =
-  "mongodb+srv://sarkarnafe:N6D6mlJRLd3u2leM@cluster0.8dja6or.mongodb.net/?retryWrites=true&w=majority/Curd";
-
+const ATLAS_URI = process.env.KEY_URI;
 mongoose.connect(ATLAS_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
